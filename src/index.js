@@ -261,6 +261,8 @@ class TimelineChart {
     }
     
     zoomed(event, self) {
+        console.log(event.transform)
+
         if (this.k == null) {
             this.k = 1;
         }
@@ -284,7 +286,6 @@ class TimelineChart {
             $("#values").text(`original transform: ${event.transform}`)
 
             self.x.domain(self.x.domain())
-
 
             self.x = event.transform.rescaleX(self.x)
 
